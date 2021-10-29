@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <div id="app" class="d-flex flex-column vh-100">
+     <AppHeader/>
+    <div class="flex-grow-1 container-fluid">
+      <div class="row h-100">
+        <div class="col-md-6 col-lg-4 p-3 bg-dark">
+          <div class=" h-100 d-flex flex-column">
+            <div class="flex-grow-1" style="height:0px; overflowY:auto; overflowX:hidden">
+              <AppMenu/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-8 p-3">
+          <div class=" h-100 d-flex flex-column">
+            <div class="flex-grow-1 overflow-auto pr-3" style="height:0px">
+              <router-view/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AppHeader from "@/components/AppHeader.vue";
+import AppMenu from "./components/AppMenu.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    AppHeader: AppHeader,
+    AppMenu : AppMenu
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .title{
+    color: red;
+  }
 </style>
+
