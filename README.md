@@ -1,5 +1,6 @@
 # front-end-vue
 
+### Branch가 나뉘어 있어 병합하는 중
 ## Project setup
 ```
 npm install
